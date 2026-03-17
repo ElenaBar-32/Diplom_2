@@ -3,7 +3,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import model.UserLoginModel;
 import model.UserModel;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static data.UserData.*;
@@ -65,13 +64,8 @@ public class LoginUserTest extends BaseApiTest{
                 .body("message", equalTo(ERROR_ACCOUNT_NOT_FOUND));
     }
 
-    @After
-    public void cleanUp() {
-        if (token != null) {
-            deleteUser(token);
-        }
     }
-}
+
 
 
 
